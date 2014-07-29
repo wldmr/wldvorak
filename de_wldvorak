@@ -1,0 +1,76 @@
+// $XKeyboardConfig$
+
+// Based on the original German dvorak, these are modifications by myself.
+// put this in /usr/share/X11/xkb/symbols/de
+// (or might be /etc/X11/...)
+//
+// Additionally, insert the following text snippet into
+// [...]/xkb/rules/evdev.xml:
+// <layout>
+//     <configItem>
+//     <name>de_dvorak_waldenburger</name>
+//     <shortDescription>Andreas Waldenburger's Dvorak variant</shortDescription>
+//     <description>A. Waldenburger's Dvorak</description>
+//     <languageList><iso639Id>de</iso639Id></languageList>
+//     </configItem>
+// <variantList/>
+// </layout>
+xkb_symbols "wldvorak" {
+    include "us(dvorak)"
+
+    name[Group1]="Germany - Dvorak (wldmr)";
+
+    key <TLDE> { [ asciicircum, degree , dead_circumflex, dead_abovering] };
+
+    key <AE01> { [ 1, exclam    , onesuperior, exclamdown] };
+    key <AE02> { [ 2, quotedbl  , twosuperior ] };
+    key <AE03> { [ 3, section   , threesuperior ] };
+    key <AE04> { [ 4, dollar    , EuroSign ] };
+    key <AE05> { [ 5, percent   , bar ] };
+    key <AE06> { [ 6, ampersand , brokenbar ] };
+    key <AE07> { [ 7, slash     , braceleft ] };
+    key <AE08> { [ 8, parenleft , bracketleft ] };
+    key <AE09> { [ 9, parenright, bracketright ] };
+    key <AE10> { [ 0, equal     , braceright ] };
+
+    key <AE11> { [ plus, question, plusminus, questiondown ] };
+    key <AE12> { [ grave, acute, dead_grave, dead_acute] };
+
+    key <AD01> { [ dead_diaeresis, dead_diaeresis, less, doublebaselinedot ] };
+    key <AD02> { [ comma, semicolon, bracketleft, ellipsis ] };
+    key <AD03> { [ period, colon, bracketright, periodcentered ] };
+    key <AD04> { [ p, P, greater, paragraph ] };
+    key <AD08> { [ c, C, copyright, Cacute ] };
+    key <AD09> { [ t, T, trademark ] };
+    key <AD10> { [ z, Z ] };
+
+    key <AD11> { [ asterisk, dagger, checkmark, multiply] };
+    // U2212 is the real minus sign.
+    key <AD12> { [ slash, asciitilde, U2212, division ] };
+
+    key <AC01> { [ a, A, braceleft ] };
+    key <AC02> { [ o, O, parenleft ] };
+    key <AC03> { [ e, E, parenright ] };
+    key <AC04> { [ i, I, braceright ] };
+    key <AC05> { [ u, U ] };
+    key <AC06> { [ h, H ] };
+    key <AC07> { [ d, D, Greek_delta, Greek_DELTA ] };
+    key <AC08> { [ r, R, registered ] };
+    key <AC09> { [ n, N ] };
+    key <AC10> { [ s, S, ssharp ] };
+    key <AC11> { [ l, L ] };
+
+    // Fancy 'spaces':
+    // U202F is the non-breaking thin space
+    key <AB01> { [ underscore, U202F, nobreakspace, open_box] };
+    key <AB02> { [ q, Q, at ] };
+    key <AB07> { [ m, M, mu, Greek_MU ] };
+    key <AB10> { [ numbersign, apostrophe, minutes, seconds ] };
+
+    // 'minus' is actually 'hyphen-minus' and U2010 is the real hyphen.
+    key <BKSL> { [ minus, U2010, endash, emdash ] };
+
+    key <LSGT> { [ backslash, bar, brokenbar, deadstroke ] };
+
+    include "level3(ralt_switch)"
+};
