@@ -1,24 +1,27 @@
 // $XKeyboardConfig$
+// vim: ft=xkb
 
 // Based on the original German dvorak, these are modifications by myself.
-// put this in /usr/share/X11/xkb/symbols/de
+// copy (or link) this to /usr/share/X11/xkb/symbols/
 // (or might be /etc/X11/...)
 //
+// If you want layout switchers to see this
 // Additionally, insert the following text snippet into
 // [...]/xkb/rules/evdev.xml:
 // <layout>
 //     <configItem>
-//     <name>de_dvorak_waldenburger</name>
-//     <shortDescription>Andreas Waldenburger's Dvorak variant</shortDescription>
-//     <description>A. Waldenburger's Dvorak</description>
-//     <languageList><iso639Id>de</iso639Id></languageList>
+//         <name>wldvorak</name>
+//         <shortDescription>wldmr's Dvorak variant</shortDescription>
+//         <description>wldmr's Dvorak</description>
+//         <languageList><iso639Id>de</iso639Id></languageList>
 //     </configItem>
 // <variantList/>
 // </layout>
+
 xkb_symbols "wldvorak" {
     include "us(dvorak)"
 
-    name[Group1]="Germany - Dvorak (wldmr)";
+    name[Group1]="Dvorak (wldmr)";
 
     key <TLDE> { [ asciicircum, degree , dead_circumflex, dead_abovering] };
 
